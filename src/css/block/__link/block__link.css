@@ -1,0 +1,11 @@
+.block__link {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: calc(100% - 40px);
+  height: 35px;
+  background-color: aquamarine;
+  border-radius: 7px;
+}

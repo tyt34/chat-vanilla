@@ -1,0 +1,11 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  height: 350px;
+  background-color: antiquewhite;
+  border-radius: 30px;
+  margin: auto;
+  padding: 25px;
+}
