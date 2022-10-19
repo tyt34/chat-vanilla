@@ -1,7 +1,11 @@
 @import url(../../vendor/normalize.css);
-@import url(../../css/auth/auth.css);
-@import url(../../css/block/__button/block__button.css);
-@import url(../../css/block/__link/block__link.css);
-@import url(../../css/block/__welcome/block__welcome.css);
-@import url(../../css/block/block.css);
-
+@import url(../../css/main/main.css);
+@import url(../../css/main/__ava-mini/main__ava-mini.css);
+@import url(../../css/main/__ava-norm/main__ava-norm.css);
+@import url(../../css/main/__left-mid/main__left-mid.css);
+@import url(../../css/main/__left-top/main__left-top.css);
+@import url(../../css/main/__left/main__left.css);
+@import url(../../css/main/__list-users/main__list-users.css);
+@import url(../../css/main/__right/main__right.css);
+@import url(../../css/main/__user-ava/main__user-ava.css);
+@import url(../../css/main/__user/main__user.css);

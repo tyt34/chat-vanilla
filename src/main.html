@@ -6,14 +6,43 @@
     <meta charset="UTF-8">
     <title>Чат - авторизация</title>
   </head>
-  <body class="auth">
+  <body class="main">
 
-    <section class="block">
-      <div class="block__text">
-        <p class="block__welcome">
-          MAIN 
-        </p>
+    <section class="main__left">
+      <div class="main__left-top">
+        Список online пользователей
       </div>
-    </section>    
+
+      <div class="main__left-mid">
+        <ul class="main__list-users">
+          <li>
+            <p>
+              Тут будет отображаться имя первого пользователя...
+            </p>
+            <img 
+              class="main__user-ava main__ava-mini"
+              src="./images/def-ava.png" 
+              alt="аватарка" 
+            >
+          </li>
+        </ul>       
+      </div>
+
+      <div class="main__user">
+        <p>
+          Ваше имя еще не определено... Ожидайте...
+        </p>
+        <img 
+          class="main__user-ava main__ava-norm"
+          id="user-ava" 
+          src="./images/def-ava.png" 
+          alt="аватарка"
+        >
+      </div>
+    </section>
+
+    <section class="main__right">
+      
+    </section> 
   </body>
 </html>
