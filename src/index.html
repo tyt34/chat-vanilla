@@ -32,6 +32,17 @@
     </section>
 
     <script src="./pages/index.js" type="module"></script>
-    
+    <script type="module">
+        console.log(' -> ')
+        import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+        //const socket = io();
+        const socket = io("http://localhost:3000/");
+        socket.on('eventClient', function (data) {
+          console.log(data);
+        });
+        socket.emit('eventServer', { data: 'Hello Server' })
+
+        console.log(' --> ')
+    </script>
   </body>
 </html>
