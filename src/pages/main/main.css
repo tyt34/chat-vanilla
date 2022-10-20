@@ -5,7 +5,11 @@
 @import url(../../css/main/__left-mid/main__left-mid.css);
 @import url(../../css/main/__left-top/main__left-top.css);
 @import url(../../css/main/__left/main__left.css);
-@import url(../../css/main/__list-users/main__list-users.css);
+@import url(../../css/main/__list/main__list.css);
 @import url(../../css/main/__right/main__right.css);
 @import url(../../css/main/__user-ava/main__user-ava.css);
 @import url(../../css/main/__user/main__user.css);
+@import url(../../css/main/__text-top/main__text-top.css);
+@import url(../../css/main/__user-name/main__user-name.css);
+@import url(../../css/main/__item/main__item.css);
+@import url(../../css/main/__item-text/main__item-text.css);

@@ -1,0 +1,6 @@
+.main__user {
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  background-color: #6cb8db;
+}
