@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-loader": "^8.2.5",
     "favicons": "^7.0.1",
     "favicons-webpack-plugin": "^6.0.0-alpha.1",
     "html-loader": "^4.2.0",
@@ -21,7 +22,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",

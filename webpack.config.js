@@ -21,17 +21,22 @@ module.exports = {
     }
   },
   mode: 'development',
-    devServer: {
-      static: {
-        directory: path.resolve(__dirname, 'app'),
-      },
-      compress: true,
-      port: 8080,
-      open: true
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'app'),
     },
+    compress: true,
+    port: 8080,
+    open: true
+  },
   module: {
     rules: [
-      
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src'),
+        use: 'babel-loader',
+        exclude: '/node_modules/'
+      },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: 'asset/resource',

@@ -1,1 +1,0 @@
-export const urlSocket = 'http://localhost:3000/' 
