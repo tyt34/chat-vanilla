@@ -54,9 +54,28 @@
             <button class="main__button" id="send-message">
               Отправить сообщение
             </button>
-            <button class="main__button" id="send-image">
-              Добавить картинку
-            </button>
+            <div class="main__input-send">
+              <label
+                id="label-input"
+                class="main__input-label" 
+                for="send-image"
+              >
+                <p>
+                  Прикрепить картинку
+                </p>
+              </label>
+              <input 
+                id="send-image"
+                class="main__input" 
+                id="send-image" 
+                type=file
+              />
+              <div class="main__input-prev">
+                <p class="main__prev-text">
+                  Файл не выбран
+                </p>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -98,6 +117,19 @@
           </p>
         </div>
       </li>
+    </template>
+
+    <template class="template-img">
+      <div class="main__img">
+        <p class="main__img-title">
+          Прикрепленное изображение:
+        </p>
+        <img 
+          class="main__img-mini" 
+          src="" 
+          alt="изображение, которое прикрепил пользователь"
+        >
+      </div>
     </template>
   </body>
 </html>

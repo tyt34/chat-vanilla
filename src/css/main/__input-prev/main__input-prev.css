@@ -1,0 +1,11 @@
+.main__input-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid hsla(0, 10%, 30%, 0.314);
+  background-color: #e1bae9;
+  width: 138px;
+  height: 38px;
+  margin-top: 10px;
+  border-radius: 5px;
+}

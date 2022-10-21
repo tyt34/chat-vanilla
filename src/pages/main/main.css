@@ -28,3 +28,13 @@
 @import url(../../css/main/__textarea/main__textarea.css);
 @import url(../../css/main/__buttons/main__buttons.css);
 @import url(../../css/main/__button/main__button.css);
+
+@import url(../../css/main/__input/main__input.css);
+@import url(../../css/main/__input-label/main__input-label.css);
+@import url(../../css/main/__input-prev/main__input-prev.css);
+@import url(../../css/main/__input-send/main__input-send.css);
+@import url(../../css/main/__prev-text/main__prev-text.css);
+
+@import url(../../css/main/__img/main__img.css);
+@import url(../../css/main/__img-title/main__img-title.css);
+@import url(../../css/main/__img-mini/main__img-mini.css);
