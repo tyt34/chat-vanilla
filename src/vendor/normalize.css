@@ -384,3 +384,7 @@ input::-webkit-inner-spin-button {
 a {
   text-decoration: none;
 }
+
+li {
+  list-style-type: none;
+}

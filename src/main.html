@@ -17,7 +17,9 @@
 
       <div class="main__left-mid">
         <ul class="main__list">
-        
+          <!-- 
+            Список пользователей, которые онлайн
+          -->
         </ul>       
       </div>
 
@@ -35,7 +37,29 @@
     </section>
 
     <section class="main__right">
-      
+      <ul class="main__list-messages">
+        <!--
+          Список сообщений, которые ввели пользователи
+        -->
+      </ul>
+
+      <div class="main__area">
+        <form class="main__form">
+          <textarea 
+            class="main__textarea"  
+            name="text"
+            placeholder="Напишите сообщение..."
+          ></textarea>
+          <div class="main__buttons">
+            <button class="main__button" id="send-message">
+              Отправить сообщение
+            </button>
+            <button class="main__button" id="send-image">
+              Добавить картинку
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
 
     <template class="template-item">
@@ -48,6 +72,31 @@
           src="./images/def-ava.png" 
           alt="аватарка" 
         >
+      </li>
+    </template>
+
+    <template class="template-message">
+      <!-- 
+        main__message_main
+        или
+        main__message_other
+      -->
+      <li class="main__message">
+        <div class="main__message-top">
+          <p class="main__message-user">
+            Имя
+          </p>
+          <img 
+            class="main__user-ava main__ava-mini"
+            src="./images/def-ava.png" 
+            alt="аватарка" 
+          >
+        </div>
+        <div class="main__message-bottom">
+          <p class="main__message-text">
+            Текст
+          </p>
+        </div>
       </li>
     </template>
   </body>

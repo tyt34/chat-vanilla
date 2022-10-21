@@ -13,3 +13,18 @@
 @import url(../../css/main/__user-name/main__user-name.css);
 @import url(../../css/main/__item/main__item.css);
 @import url(../../css/main/__item-text/main__item-text.css);
+
+@import url(../../css/main/__area/main__area.css);
+@import url(../../css/main/__list-messages/main__list-messages.css);
+@import url(../../css/main/__message/main__message.css);
+@import url(../../css/main/__message/_main/main__message_main.css);
+@import url(../../css/main/__message/_other/main__message_other.css);
+@import url(../../css/main/__message-bottom/main__message-bottom.css);
+@import url(../../css/main/__message-text/main__message-text.css);
+@import url(../../css/main/__message-top/main__message-top.css);
+@import url(../../css/main/__message-user/main__message-user.css);
+
+@import url(../../css/main/__form/main__form.css);
+@import url(../../css/main/__textarea/main__textarea.css);
+@import url(../../css/main/__buttons/main__buttons.css);
+@import url(../../css/main/__button/main__button.css);
