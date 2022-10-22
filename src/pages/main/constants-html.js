@@ -1,7 +1,8 @@
 import { 
-  selNameMainUser, selAvaMainUser, selTempUser,
-  selTempMessage, selListUsers, selSendMessage, selSendImg,
-  selTextarea, selListMessages, selInput, selPrev, selImg
+  selNameMainUser, selAvaMainUser, selTempUser, selTempMessage, 
+  selListUsers, selSendMessage, selSendImg, selTextarea, 
+  selListMessages, selInput, selPrev, selImg, selPopupImg,
+  selPopup
 } from './constants-string.js'
 
 export const htmlNameMainUser = document.querySelector(selNameMainUser)
@@ -16,3 +17,5 @@ export const htmlListMessage = document.querySelector(selListMessages)
 export const htmlInput = document.querySelector(selInput)
 export const htmlPrev = document.querySelector(selPrev)
 export const htmlTempImg = document.querySelector(selImg)
+export const htmlPopupImg = document.querySelector(selPopupImg)
+export const htmlPopup = document.querySelector(selPopup)

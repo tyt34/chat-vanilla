@@ -4,17 +4,16 @@ import {
   urlSocket, selAvaMainUser, sendChatMessage, selMessageText, 
   selMessageUser, selMessage, selMessageMainUser, textForBeginYourName,
   defaultImg, giveName, giveAllUsers, selItemText, getNewUser,
-  selAvaMini, selUser, getOldUser, getNewMessage, selMessageOtherUser, sendChatImg,
-  selSrcImg
+  selAvaMini, selUser, getOldUser, getNewMessage, selMessageOtherUser,
+  selSrcImg, popupIsOpen, fileNotChoice, selPopupButtonClose
 } from './constants-string.js'
 
 import {
   htmlNameMainUser, htmlAvaMainUser, htmlTempUser, htmlTempMessage,
   htmlListUsers, buttonSendMessage, buttonSendImg, htmlTextMessage, 
-  htmlListMessage, htmlInput, htmlPrev, htmlTempImg
+  htmlListMessage, htmlInput, htmlPrev, htmlTempImg, htmlPopupImg,
+  htmlPopup
 } from './constants-html.js'
-
-console.log(' M A I N ')
 
 import { io } from 'https://cdn.socket.io/4.4.1/socket.io.esm.min.js'
 const socket = io(urlSocket)
@@ -27,29 +26,58 @@ let usersList = []
 let srcImg = ''
 
 /**
+ * Добавление картинки на страницу
+ * @param {*} image 
+ * @param {*} newMessage 
+ */
+const addImgInPage = function(image, newMessage) {
+  let newImg = htmlTempImg.content.cloneNode(true)
+  newImg.querySelector(selSrcImg).src = image
+  newImg.querySelector(selSrcImg).addEventListener('click', () => {
+    htmlPopupImg.src = image
+    htmlPopup.classList.add(popupIsOpen)
+  })
+  newMessage.querySelector(selMessage).append(newImg)
+}
+
+/**
+ * 
+ */
+const addMessageInPage = function(newMessage, message, name, selecter) {
+  newMessage.querySelector(selMessageText).textContent = message
+  newMessage.querySelector(selMessageUser).textContent = name
+  newMessage.querySelector(selMessage).classList.add(selecter)
+}
+
+/**
  * Используется для отправки сообщения и добавления его на страницу
  */
 const listenerButSendMessage = function() {
   if (htmlTextMessage.value !== '') {
-    //console.log(' base64: ', imgInBase64)
-    socket.emit(sendChatMessage, htmlTextMessage.value)
     let newMessage = htmlTempMessage.content.cloneNode(true)
-    newMessage.querySelector(selMessageText).textContent = htmlTextMessage.value
-    newMessage.querySelector(selMessageUser).textContent = nameMainUser
+    addMessageInPage(newMessage, htmlTextMessage.value, nameMainUser, selMessageMainUser)
     newMessage.querySelector(selAvaMainUser).src = imgMainUser
-    newMessage.querySelector(selMessage).classList.add(selMessageMainUser)
-    htmlTextMessage.value = ''
     if (imgInBase64) {
-      socket.emit(sendChatImg, imgInBase64)
-      let newImg = htmlTempImg.content.cloneNode(true)
-      newImg.querySelector(selSrcImg).src = srcImg
-      newMessage.querySelector(selMessage).append(newImg)
-    } 
+      addImgInPage(srcImg, newMessage)   
+    }
+    socket.emit(sendChatMessage, {
+      message: htmlTextMessage.value,
+      imageFile: imgInBase64
+    })
+    htmlTextMessage.value = ''
     imgInBase64 = ''
-    htmlPrev.textContent = 'Файл не выбран'
+    htmlPrev.textContent = fileNotChoice
+    htmlInput.value = ''
     htmlListMessage.append(newMessage)
   } 
 }
+
+/**
+ * Закрытие попапа
+ */
+document.querySelector(selPopupButtonClose).addEventListener('click', () => {
+  htmlPopup.classList.remove(popupIsOpen)
+})
 
 /**
  * Отключение отправки формы при нажатие на кнопки
@@ -66,20 +94,13 @@ buttonSendImg.onclick = function() {
   htmlInput.click()
   htmlInput.addEventListener('change', function (e) {
     htmlPrev.textContent = htmlInput.files[0].name
-    let img = document.createElement('img')
-    img.crossOrigin = 'Anonymous'
+    htmlTextMessage.value = htmlTextMessage.value + ' '
     srcImg = URL.createObjectURL(htmlInput.files[0])
-    img.src = URL.createObjectURL(htmlInput.files[0])
-    let canvas = document.createElement('canvas')
-    img.onload = function() {
-      canvas.width = img.width
-      canvas.height = img.height
-      let dataURL = canvas.toDataURL("image/png")
-      let res = dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
-      htmlTextMessage.value = htmlTextMessage.value + ' '
-      imgInBase64 = res
-      //console.log(' res: ', res)
-    }
+    let reader = new FileReader()
+    reader.addEventListener('load', () => {
+      imgInBase64 = reader.result
+    })
+    reader.readAsDataURL(htmlInput.files[0])
   })
 }
 
@@ -94,22 +115,37 @@ socket.on(giveName, (user) => {
   htmlNameMainUser.textContent = textForBeginYourName + user.name
   nameMainUser = user.name
   idMainUser = user.id
-  if (user.img !== defaultImg) {
-    imgMainUser = user.img
-    htmlAvaMainUser.src = user.img
+  if (user.avatar !== defaultImg) {
+    imgMainUser = user.avatar
+    htmlAvaMainUser.src = user.avatar
   }
 })
+
+/**
+ * проверка на наличие данного пользователя в списке
+ * @param {} idUser 
+ * @returns 
+ */
+function checkUserInList(idUser) {
+  let result = true
+  usersList.map( (user) => {
+    if (user.id === idUser) {
+      result = false
+    }
+  })
+  return result
+}
 
 /**
  * Получение списка пользователей на момент подключения
  */
 socket.on(giveAllUsers, (users) => {
   users.map( (user) => {
-    if (user.name !== nameMainUser) {
+    if (checkUserInList(user.id)) {
       let newUser = htmlTempUser.content.cloneNode(true)
       newUser.querySelector(selItemText).textContent = user.name
-      if (user.img !== defaultImg) {
-        newUser.querySelector(selAvaMainUser).src = user.img
+      if (user.avatar !== defaultImg) {
+        newUser.querySelector(selAvaMainUser).src = user.avatar
       }
       htmlListUsers.append(newUser)
     }
@@ -123,8 +159,8 @@ socket.on(giveAllUsers, (users) => {
 socket.on(getNewUser, (newUserObj) => {
   let newUser = htmlTempUser.content.cloneNode(true)
   newUser.querySelector(selItemText).textContent = newUserObj.name
-  if (newUserObj.img !== defaultImg) {
-    newUser.querySelector(selAvaMini).src = newUserObj.img
+  if (newUserObj.avatar !== defaultImg) {
+    newUser.querySelector(selAvaMini).src = newUserObj.avatar
   }
   htmlListUsers.append(newUser)
   usersList.push(newUserObj)
@@ -147,17 +183,18 @@ socket.on(getOldUser, (idUser) => {
 })
 
 /**
- * Используется для получения сообщения от всех пользователей, включая отправителя
+ * Используется для получения сообщения от всех пользователей, включая отправителя 
  */
 socket.on(getNewMessage, (messageObj) => {
   if (messageObj.id !== idMainUser) {
     let newMessage = htmlTempMessage.content.cloneNode(true)
-    newMessage.querySelector(selMessageText).textContent = messageObj.message
-    newMessage.querySelector(selMessageUser).textContent = messageObj.name
-    if (messageObj.img !== defaultImg) {
-      newMessage.querySelector(selAvaMainUser).src = messageObj.img
+    addMessageInPage(newMessage, messageObj.message, messageObj.name, selMessageOtherUser)
+    if (messageObj.avatar !== defaultImg) {
+      newMessage.querySelector(selAvaMainUser).src = messageObj.avatar
     }
-    newMessage.querySelector(selMessage).classList.add(selMessageOtherUser)
+    if (messageObj.imageFile !== '') {
+      addImgInPage(messageObj.imageFile, newMessage)
+    }
     htmlListMessage.append(newMessage)
   }
 })

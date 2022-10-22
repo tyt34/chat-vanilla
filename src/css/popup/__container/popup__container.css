@@ -1,0 +1,10 @@
+.popup__container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  padding: 50px;
+  bottom: 25px;
+  height: calc(100vh - 100px);
+}

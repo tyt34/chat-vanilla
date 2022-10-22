@@ -21,6 +21,9 @@ export const selInput = '.main__input'
 export const selPrev = '.main__prev-text'
 export const selImg = '.template-img'
 export const selSrcImg = '.main__img-mini'
+export const selPopupImg = '.popup__img'
+export const selPopup = '.popup'
+export const selPopupButtonClose = '.popup__close'
 
 /**
  * other
@@ -30,6 +33,8 @@ export const selUser = 'li.main__item'
 export const textForBeginYourName = 'Вы: '
 export const defaultImg = 'default'
 export const selMessageOtherUser = 'main__message_other'
+export const popupIsOpen = 'popup_open'
+export const fileNotChoice = 'Файл не выбран'
 
 /**
  * socket io
@@ -40,4 +45,3 @@ export const giveAllUsers = 'now list users'
 export const getNewUser = 'add new user'
 export const getOldUser = 'remove user'
 export const getNewMessage = 'message for all'
-export const sendChatImg = 'chat img'
