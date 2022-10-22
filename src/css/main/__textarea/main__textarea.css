@@ -5,3 +5,10 @@
   padding: 5px;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 600px) {
+  .main__textarea {
+    font-size: 14px;
+    height: 28px;
+  }
+}

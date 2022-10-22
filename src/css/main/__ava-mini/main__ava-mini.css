@@ -3,3 +3,11 @@
   height: 50px;
   border-radius: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .main__ava-mini {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+  }
+}

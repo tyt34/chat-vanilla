@@ -3,3 +3,10 @@
   height: 100vh;
   background-color: aliceblue;
 }
+
+@media screen and (max-width: 600px) {
+  .main__left {
+    height: 120px;
+    width: 100vw;
+  }
+}

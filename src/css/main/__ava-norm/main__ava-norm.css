@@ -5,3 +5,11 @@
   height: 100px;
   border-radius: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  .main__ava-norm {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+  }
+}

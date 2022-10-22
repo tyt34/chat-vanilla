@@ -5,3 +5,12 @@
   margin-bottom: 10px;
   height: 36px;
 }
+
+@media screen and (max-width: 600px) {
+  .main__user-name {
+    font-size: 14px;
+    height: 28px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}

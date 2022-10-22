@@ -1,3 +1,9 @@
 .main__right {
   width: calc(100vw - 250px);
 }
+
+@media screen and (max-width: 600px) {
+  .main__right {
+    width: 100vw;
+  }
+}

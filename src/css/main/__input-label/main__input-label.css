@@ -11,3 +11,9 @@
   margin-top: 10px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 700px) {
+  .main__input-label {
+    height: 20px
+  }
+}

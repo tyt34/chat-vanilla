@@ -2,3 +2,9 @@
   background-color: hsla(166, 28%, 70%, 0.663);
   height: 170px;
 }
+
+@media screen and (max-width: 600px) {
+  .main__area {
+    height: 135px;
+  }
+}

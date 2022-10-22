@@ -4,3 +4,12 @@
   flex-direction: column;
   background-color: #6cb8db;
 }
+
+@media screen and (max-width: 600px) {
+  .main__user {
+    width: 100%;
+    height: 94px;
+    position: fixed;
+    bottom: 0;
+  }
+}

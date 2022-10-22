@@ -3,3 +3,10 @@
   font-size: 20px;
   font-family: 'Inter', Arial, sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+  .main {
+    flex-direction: column;
+    width: 100%;
+  }
+}
