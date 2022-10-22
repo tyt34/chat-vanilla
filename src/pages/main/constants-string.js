@@ -1,5 +1,5 @@
-export const urlSocket = 'http://localhost:3000/' 
-
+//export const urlSocket = 'http://localhost:3000/' 
+export const urlSocket = 'https://chat-node-js-backend.glitch.me/'
 /**
  * class
  */

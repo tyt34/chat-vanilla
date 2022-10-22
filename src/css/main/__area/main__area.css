@@ -5,6 +5,9 @@
 
 @media screen and (max-width: 600px) {
   .main__area {
-    height: 135px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: calc(94px + 135px);
   }
 }
