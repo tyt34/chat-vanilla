@@ -1,13 +1,10 @@
-.main__text-top {
-  position: relative;
-  right: 5px;
+.main__number-users {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
 @media screen and (max-width: 600px) {
-  .main__text-top {
-    width: 100%;
+  .main__number-users {
     padding: 0;
   }
 }

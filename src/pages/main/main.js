@@ -12,7 +12,7 @@ import {
   htmlNameMainUser, htmlAvaMainUser, htmlTempUser, htmlTempMessage,
   htmlListUsers, buttonSendMessage, buttonSendImg, htmlTextMessage, 
   htmlListMessage, htmlInput, htmlPrev, htmlTempImg, htmlPopupImg,
-  htmlPopup
+  htmlPopup, htmlNumberUsers
 } from './constants-html.js'
 
 import { io } from 'https://cdn.socket.io/4.4.1/socket.io.esm.min.js'
@@ -24,6 +24,21 @@ let imgMainUser = ''
 let imgInBase64 = ''
 let usersList = []
 let srcImg = ''
+
+/**
+ * проверка на наличие данного пользователя в списке
+ * @param {} idUser 
+ * @returns 
+ */
+ function checkUserInList(idUser) {
+  let result = true
+  usersList.map( (user) => {
+    if (user.id === idUser) {
+      result = false
+    }
+  })
+  return result
+}
 
 /**
  * Добавление картинки на страницу
@@ -122,21 +137,6 @@ socket.on(giveName, (user) => {
 })
 
 /**
- * проверка на наличие данного пользователя в списке
- * @param {} idUser 
- * @returns 
- */
-function checkUserInList(idUser) {
-  let result = true
-  usersList.map( (user) => {
-    if (user.id === idUser) {
-      result = false
-    }
-  })
-  return result
-}
-
-/**
  * Получение списка пользователей на момент подключения
  */
 socket.on(giveAllUsers, (users) => {
@@ -151,6 +151,7 @@ socket.on(giveAllUsers, (users) => {
     }
   })
   usersList = users
+  htmlNumberUsers.textContent = usersList.length
 })
 
 /**
@@ -164,6 +165,7 @@ socket.on(getNewUser, (newUserObj) => {
   }
   htmlListUsers.append(newUser)
   usersList.push(newUserObj)
+  htmlNumberUsers.textContent = usersList.length
 })
 
 /**
@@ -178,6 +180,7 @@ socket.on(getOldUser, (idUser) => {
         }
       })
       usersList.splice(i, 1)
+      htmlNumberUsers.textContent = usersList.length
     }
   })
 })

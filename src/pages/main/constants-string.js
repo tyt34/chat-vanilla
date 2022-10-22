@@ -24,6 +24,7 @@ export const selSrcImg = '.main__img-mini'
 export const selPopupImg = '.popup__img'
 export const selPopup = '.popup'
 export const selPopupButtonClose = '.popup__close'
+export const selNumberUsers = '.main__number-users'
 
 /**
  * other

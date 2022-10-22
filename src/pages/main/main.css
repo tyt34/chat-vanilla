@@ -13,7 +13,6 @@
 @import url(../../css/main/__user-name/main__user-name.css);
 @import url(../../css/main/__item/main__item.css);
 @import url(../../css/main/__item-text/main__item-text.css);
-
 @import url(../../css/main/__area/main__area.css);
 @import url(../../css/main/__list-messages/main__list-messages.css);
 @import url(../../css/main/__message/main__message.css);
@@ -23,24 +22,21 @@
 @import url(../../css/main/__message-text/main__message-text.css);
 @import url(../../css/main/__message-top/main__message-top.css);
 @import url(../../css/main/__message-user/main__message-user.css);
-
 @import url(../../css/main/__form/main__form.css);
 @import url(../../css/main/__textarea/main__textarea.css);
 @import url(../../css/main/__buttons/main__buttons.css);
 @import url(../../css/main/__button/main__button.css);
-
 @import url(../../css/main/__input/main__input.css);
 @import url(../../css/main/__input-label/main__input-label.css);
 @import url(../../css/main/__input-prev/main__input-prev.css);
 @import url(../../css/main/__input-send/main__input-send.css);
 @import url(../../css/main/__prev-text/main__prev-text.css);
-
 @import url(../../css/main/__img/main__img.css);
 @import url(../../css/main/__img-title/main__img-title.css);
 @import url(../../css/main/__img-mini/main__img-mini.css);
-
 @import url(../../css/popup/__close/popup__close.css);
 @import url(../../css/popup/__container/popup__container.css);
 @import url(../../css/popup/__img/popup__img.css);
 @import url(../../css/popup/_open/popup_open);
 @import url(../../css/popup/popup.css);
+@import url(../../css/main/__number-users/main__number-users.css);
