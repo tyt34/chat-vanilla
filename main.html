@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href='./images/favicon.png'>
+    <meta charset="UTF-8">
+    <title>Чат</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png"><link rel="manifest" href="assets/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="js"><link rel="apple-touch-icon" sizes="57x57" href="assets/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="assets/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="assets/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="assets/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="assets/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="assets/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="assets/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="167x167" href="assets/apple-touch-icon-167x167.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="1024x1024" href="assets/apple-touch-icon-1024x1024.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="js"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-640x1136.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-1136x640.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-750x1334.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-1334x750.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1125x2436.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2436x1125.png"><link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1170x2532.png"><link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2532x1170.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-828x1792.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-1792x828.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1242x2688.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2688x1242.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1242x2208.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2208x1242.png"><link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1284x2778.png"><link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2778x1284.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1536x2048.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2048x1536.png"><link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1620x2160.png"><link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2160x1620.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1668x2388.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2388x1668.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1668x2224.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2224x1668.png"><link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-2048x2732.png"><link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2732x2048.png"><meta name="msapplication-TileColor" content="#fff"><meta name="msapplication-TileImage" content="assets/mstile-144x144.png"><meta name="msapplication-config" content="assets/browserconfig.xml"><link rel="yandex-tableau-widget" href="assets/yandex-browser-manifest.json"><script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+  <body class="main">
+
+    <section class="main__left">
+      <div class="main__left-top">
+        <span class="main__text-top">
+          Online пользователей: 
+        </span>
+        <span class="main__number-users">
+        </span>
+      </div>
+
+      <div class="main__left-mid">
+        <ul class="main__list">
+        </ul>       
+      </div>
+
+      <div class="main__user">
+        <p class="main__user-name">
+          Ваше имя
+        </p>
+        <img 
+          class="main__user-ava main__ava-norm"
+          id="user-ava" 
+          src="./images/def-ava.png" 
+          alt="аватарка"
+        >
+      </div>
+    </section>
+
+    <section class="main__right">
+      <ul class="main__list-messages">
+      </ul>
+
+      <div class="main__area">
+        <form class="main__form">
+          <textarea 
+            class="main__textarea"  
+            name="text"
+            placeholder="Напишите сообщение..."
+          ></textarea>
+          <div class="main__buttons">
+            <button class="main__button" id="send-message">
+              Отправить сообщение
+            </button>
+            <div class="main__input-send">
+              <label
+                id="label-input"
+                class="main__input-label" 
+                for="send-image"
+              >
+                <p>
+                  Прикрепить картинку
+                </p>
+              </label>
+              <input 
+                id="send-image"
+                class="main__input" 
+                id="send-image" 
+                type=file
+              />
+              <div class="main__input-prev">
+                <p class="main__prev-text">
+                  Файл не выбран
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="popup">
+      <div class="popup__container">
+        <button class="popup__close">
+          x
+        </button>
+        <img 
+          class="popup__img" 
+          src="./images/def-ava.png" 
+          alt="Увеличенное изображение для просмотра"
+        >
+      </div>
+    </section>
+
+    <template class="template-item">
+      <li class="main__item">
+        <p class="main__item-text">
+          Имя
+        </p>
+        <img 
+          class="main__user-ava main__ava-mini"
+          src="./images/def-ava.png" 
+          alt="аватарка" 
+        >
+      </li>
+    </template>
+
+    <template class="template-message">
+      <li class="main__message">
+        <div class="main__message-top">
+          <p class="main__message-user">
+            Имя
+          </p>
+          <img 
+            class="main__user-ava main__ava-mini"
+            src="./images/def-ava.png" 
+            alt="аватарка" 
+          >
+        </div>
+        <div class="main__message-bottom">
+          <p class="main__message-text">
+            Текст
+          </p>
+        </div>
+      </li>
+    </template>
+
+    <template class="template-img">
+      <div class="main__img">
+        <p class="main__img-title">
+          Прикрепленное изображение:
+        </p>
+        <img 
+          class="main__img-mini" 
+          src="" 
+          alt="изображение, которое прикрепил пользователь"
+        >
+      </div>
+    </template>
+  </body>
+</html>
