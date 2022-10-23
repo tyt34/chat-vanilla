@@ -514,7 +514,6 @@ li {
 
 @media screen and (max-width: 600px) {
   .main__text-top {
-    width: 100%;
     padding: 0;
   }
 }
