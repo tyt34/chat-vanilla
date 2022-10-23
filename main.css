@@ -551,7 +551,10 @@ li {
 
 @media screen and (max-width: 600px) {
   .main__area {
-    height: 165px;
+    position: fixed;
+    bottom: 94px;
+    width: 100%;
+    height: 135px;
   }
 }
 .main__list-messages {
@@ -562,8 +565,8 @@ li {
 
 @media screen and (max-width: 600px) {
   .main__list-messages {
-    /*height: calc(100vh - 349px);*/
-    height: calc(100vh - 379px);
+    height: calc(100vh - 349px);
+    /*height: calc(100vh - 379px);*/
   }
 }
 .main__message {
