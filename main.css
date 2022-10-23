@@ -567,7 +567,7 @@ li {
 @media screen and (max-width: 600px) {
   .main__list-messages {
     /*height: calc(100vh - 349px);*/
-    height: calc(100vh - 380px);
+    height: calc(100vh - 400px);
   }
 }
 .main__message {
