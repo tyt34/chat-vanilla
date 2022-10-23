@@ -436,7 +436,7 @@ li {
 
 @media screen and (max-width: 600px) {
   .main__left-mid {
-    height: 100px
+    height: 105px
   }
 }
 .main__left-top {
@@ -475,7 +475,7 @@ li {
 
 @media screen and (max-width: 600px) {
   .main__list {
-    height: 200px;
+    /*height: 200px;*/
   }
 }
 .main__right {
