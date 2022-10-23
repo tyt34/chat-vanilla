@@ -728,6 +728,12 @@ li {
   bottom: 25px;
   height: calc(100vh - 100px);
 }
+
+@media screen and (max-width: 600px) {
+  .popup__container {
+    height: calc(100vh - 200px);
+  }
+}
 .popup__img {
   width: 100%;
 }
