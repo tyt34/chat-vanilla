@@ -2,7 +2,7 @@ let url
 if (process.env.apiSocket) {
   url = process.env.apiSocket
 } else {
-  url = 'https://chat-node-js-backend.glitch.me/'
+  url = 'http://localhost:3000/'
 }
 export const urlSocket = url
 
