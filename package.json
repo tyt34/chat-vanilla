@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "babel-loader": "^8.2.5",
+    "dotenv-webpack": "^8.0.1",
     "favicons": "^7.0.1",
     "favicons-webpack-plugin": "^6.0.0-alpha.1",
     "html-loader": "^4.2.0",

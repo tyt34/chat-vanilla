@@ -6,3 +6,9 @@
   font-size: 20px;
   font-family: 'Inter', Arial, sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+  .auth {
+    padding: 20px;
+  }
+}

@@ -22,23 +22,8 @@ let nameMainUser = ''
 let idMainUser = ''
 let imgMainUser = ''
 let imgInBase64 = ''
-let usersList = []
+let usersList = new Map()
 let srcImg = ''
-
-/**
- * проверка на наличие данного пользователя в списке
- * @param {} idUser 
- * @returns 
- */
- function checkUserInList(idUser) {
-  let result = true
-  usersList.map( (user) => {
-    if (user.id === idUser) {
-      result = false
-    }
-  })
-  return result
-}
 
 /**
  * Добавление картинки на страницу
@@ -56,7 +41,7 @@ const addImgInPage = function(image, newMessage) {
 }
 
 /**
- * 
+ * Используется для добавления сообщения на страницу пользователя
  */
 const addMessageInPage = function(newMessage, message, name, selecter) {
   newMessage.querySelector(selMessageText).textContent = message
@@ -127,12 +112,13 @@ buttonSendMessage.addEventListener('click', listenerButSendMessage)
 socket.emit(giveName)
 
 socket.on(giveName, (user) => {
-  htmlNameMainUser.textContent = textForBeginYourName + user.name
-  nameMainUser = user.name
-  idMainUser = user.id
-  if (user.avatar !== defaultImg) {
-    imgMainUser = user.avatar
-    htmlAvaMainUser.src = user.avatar
+  const { avatar, id, name} = user
+  htmlNameMainUser.textContent = textForBeginYourName + name
+  nameMainUser = name
+  idMainUser = id
+  if (avatar !== defaultImg) {
+    imgMainUser = avatar
+    htmlAvaMainUser.src = avatar
   }
 })
 
@@ -141,62 +127,71 @@ socket.on(giveName, (user) => {
  */
 socket.on(giveAllUsers, (users) => {
   users.map( (user) => {
-    if (checkUserInList(user.id)) {
+    const { avatar, id, name} = user
+    if (!usersList.get(id)) {
       let newUser = htmlTempUser.content.cloneNode(true)
-      newUser.querySelector(selItemText).textContent = user.name
-      if (user.avatar !== defaultImg) {
-        newUser.querySelector(selAvaMainUser).src = user.avatar
+      newUser.querySelector(selItemText).textContent = name
+      if (avatar !== defaultImg) {
+        newUser.querySelector(selAvaMainUser).src = avatar
       }
       htmlListUsers.append(newUser)
-    }
+
+      usersList.set(id, {
+        name,
+        avatar
+      })
+    }    
   })
-  usersList = users
-  htmlNumberUsers.textContent = usersList.length
+  htmlNumberUsers.textContent = usersList.size
 })
 
 /**
  * Используется при подключение нового пользователя
  */
-socket.on(getNewUser, (newUserObj) => {
-  let newUser = htmlTempUser.content.cloneNode(true)
-  newUser.querySelector(selItemText).textContent = newUserObj.name
-  if (newUserObj.avatar !== defaultImg) {
-    newUser.querySelector(selAvaMini).src = newUserObj.avatar
+socket.on(getNewUser, (user) => {
+  const { avatar, id, name} = user
+  if (!usersList.get(id)) {
+    let newUser = htmlTempUser.content.cloneNode(true)
+    newUser.querySelector(selItemText).textContent = name
+    if (avatar !== defaultImg) {
+      newUser.querySelector(selAvaMini).src = avatar
+    }
+    htmlListUsers.append(newUser)
+
+    usersList.set(id, {
+      name,
+      avatar
+    })
+    htmlNumberUsers.textContent = usersList.size
   }
-  htmlListUsers.append(newUser)
-  usersList.push(newUserObj)
-  htmlNumberUsers.textContent = usersList.length
 })
 
 /**
  * Используется при отключение пользователя
  */
 socket.on(getOldUser, (idUser) => {
-  usersList.map( (user, i) => {
-    if (user.id === idUser) {
-      [...document.querySelectorAll(selUser)].map( (el) => {
-        if (el.querySelector(selItemText).textContent === user.name) {
-          el.remove()
-        }
-      })
-      usersList.splice(i, 1)
-      htmlNumberUsers.textContent = usersList.length
+  [...document.querySelectorAll(selUser)].map( (el) => {
+    if (el.querySelector(selItemText).textContent === usersList.get(idUser).name) {
+      el.remove()
+      usersList.delete(idUser)
     }
   })
+  htmlNumberUsers.textContent = usersList.size
 })
 
 /**
  * Используется для получения сообщения от всех пользователей, включая отправителя 
  */
 socket.on(getNewMessage, (messageObj) => {
-  if (messageObj.id !== idMainUser) {
+  const { avatar, id, imageFile, message, name} = messageObj
+  if (id !== idMainUser) {
     let newMessage = htmlTempMessage.content.cloneNode(true)
-    addMessageInPage(newMessage, messageObj.message, messageObj.name, selMessageOtherUser)
-    if (messageObj.avatar !== defaultImg) {
-      newMessage.querySelector(selAvaMainUser).src = messageObj.avatar
+    addMessageInPage(newMessage, message, name, selMessageOtherUser)
+    if (avatar !== defaultImg) {
+      newMessage.querySelector(selAvaMainUser).src = avatar
     }
-    if (messageObj.imageFile !== '') {
-      addImgInPage(messageObj.imageFile, newMessage)
+    if (imageFile !== '') {
+      addImgInPage(imageFile, newMessage)
     }
     htmlListMessage.append(newMessage)
   }
