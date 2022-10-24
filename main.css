@@ -707,6 +707,7 @@ li {
 }
 .main__img-mini {
   width: 100px;
+  cursor: pointer;
 }
 .popup__close {
   color: white;

@@ -396,6 +396,12 @@ li {
   font-size: 20px;
   font-family: 'Inter', Arial, sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+  .auth {
+    padding: 20px;
+  }
+}
 .block__button {
   
 }
@@ -418,12 +424,19 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 400px;
-  height: 350px;
+  width: 420px;
+  height: 185px;
   background-color: antiquewhite;
   border-radius: 30px;
   margin: auto;
   padding: 25px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .block {
+    height: 260px
+  }
 }
 
 
