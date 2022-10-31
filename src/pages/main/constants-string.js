@@ -1,6 +1,6 @@
 let url
-if (!process.env.apiSocket) {
-  url = process.env.apiSocket
+if (process.env.URLAPI === 'prod') {
+  url = 'https://chat-node-js-backend.glitch.me/'
 } else {
   url = 'http://localhost:3001/'
 }

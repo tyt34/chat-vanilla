@@ -5,9 +5,9 @@
   "homepage": "https://tyt34.github.io/chat-vanilla-js/",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'apiSocket = https://chat-node-js-backend.glitch.me/' > .env; rm -rf dist && webpack --mode production",
-    "dev": "echo 'apiSocket = http://localhost:3001/' > .env; webpack serve",
-    "deploy": "echo 'apiSocket = https://chat-node-js-backend.glitch.me/' > .env; gh-pages -d dist"
+    "build": "echo 'URLAPI = prod' > .env; rm -rf dist && webpack --mode production",
+    "dev": "echo 'URLAPI = test' > .env; webpack serve",
+    "deploy": "echo 'URLAPI = prod' > .env; gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
