@@ -388,7 +388,7 @@ a {
 li {
   list-style-type: none;
 }
-.auth {
+.intro {
   display: flex;
   background-color: black;
   height: 100vh;
@@ -398,19 +398,15 @@ li {
 }
 
 @media screen and (max-width: 600px) {
-  .auth {
+  .intro {
     padding: 20px;
   }
-}
-.block__button {
-  
 }
 .block__link {
   display: flex;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-
   width: calc(100% - 40px);
   height: 35px;
   background-color: aquamarine;
@@ -418,7 +414,6 @@ li {
 }
 .block__welcome {
   margin-top: 10px;
-  
 }
 .block {
   display: flex;

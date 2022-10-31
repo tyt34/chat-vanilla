@@ -472,12 +472,6 @@ li {
 .main__list {
   margin-left: 10px;
 }
-
-@media screen and (max-width: 600px) {
-  .main__list {
-    /*height: 200px;*/
-  }
-}
 .main__right {
   width: calc(100vw - 250px);
 }
@@ -566,7 +560,6 @@ li {
 
 @media screen and (max-width: 600px) {
   .main__list-messages {
-    /*height: calc(100vh - 349px);*/
     height: calc(100vh - 400px);
   }
 }
