@@ -43,8 +43,7 @@ export const listenerPopup = function() {
   htmlPopup.classList.remove(popupIsOpen)
 }
 
-export const setUser = function(user) {
-  const { avatar, id, name} = user
+export const setUser = function({ avatar, id, name}) {
   htmlNameMainUser.textContent = textForBeginYourName + name
   mainUser.name = name
   mainUser.id = id
@@ -53,8 +52,7 @@ export const setUser = function(user) {
 }
 
 export const getListNowUsers = function(users) {
-  users.map( (user) => {
-    const { avatar, id, name} = user
+  users.map( ({ avatar, id, name}) => {
     if (!usersList.get(id)) {
       let newUser = htmlTempUser.content.cloneNode(true)
       newUser.querySelector(selItemText).textContent = name
@@ -70,8 +68,7 @@ export const getListNowUsers = function(users) {
   htmlNumberUsers.textContent = usersList.size
 }
 
-export const addNewUser = function(user) {
-  const { avatar, id, name} = user
+export const addNewUser = function({ avatar, id, name}) {
   if (!usersList.get(id)) {
     let newUser = htmlTempUser.content.cloneNode(true)
     newUser.querySelector(selItemText).textContent = name
@@ -96,8 +93,7 @@ export const removeUser = function(idUser) {
   htmlNumberUsers.textContent = usersList.size
 }
 
-export const addNewMessage = function(messageObj) {
-  const { avatar, id, imageFile, message, name} = messageObj
+export const addNewMessage = function({ avatar, id, imageFile, message, name}) {
   if (id !== mainUser.id) {
     let newMessage = htmlTempMessage.content.cloneNode(true)
     addMessageInPage(newMessage, message, name, selMessageOtherUser)
