@@ -1,4 +1,4 @@
-.auth {
+.intro {
   display: flex;
   background-color: black;
   height: 100vh;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .auth {
+  .intro {
     padding: 20px;
   }
 }

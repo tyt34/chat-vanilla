@@ -1,8 +1,8 @@
 let url
-if (process.env.apiSocket) {
+if (!process.env.apiSocket) {
   url = process.env.apiSocket
 } else {
-  url = 'http://localhost:3000/'
+  url = 'http://localhost:3001/'
 }
 export const urlSocket = url
 
@@ -38,7 +38,6 @@ export const selNumberUsers = '.main__number-users'
 export const selMessageMainUser = 'main__message_main'
 export const selUser = 'li.main__item'
 export const textForBeginYourName = 'Вы: '
-export const defaultImg = 'default'
 export const selMessageOtherUser = 'main__message_other'
 export const popupIsOpen = 'popup_open'
 export const fileNotChoice = 'Файл не выбран'
@@ -46,9 +45,11 @@ export const fileNotChoice = 'Файл не выбран'
 /**
  * socket io
  */
-export const sendChatMessage = 'chat message'
-export const giveName = 'give a name'
-export const giveAllUsers = 'now list users'
-export const getNewUser = 'add new user'
-export const getOldUser = 'remove user'
-export const getNewMessage = 'message for all'
+export const socketOptions = {
+  sendChatMessage: 'chat message',
+  giveName: 'give a name',
+  giveAllUsers: 'now list users',
+  getNewUser: 'add new user',
+  getOldUser: 'remove user',
+  getNewMessage: 'message for all'
+}

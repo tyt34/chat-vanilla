@@ -1,6 +1,5 @@
 @import url(../../vendor/normalize.css);
-@import url(../../css/auth/auth.css);
-@import url(../../css/block/__button/block__button.css);
+@import url(../../css/intro/intro.css);
 @import url(../../css/block/__link/block__link.css);
 @import url(../../css/block/__welcome/block__welcome.css);
 @import url(../../css/block/block.css);
