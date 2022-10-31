@@ -12,7 +12,8 @@ import {
 
 import {
   addMessageInPage, addImgInPage, listenerPopup, setUser, 
-  getListNowUsers, addNewUser, removeUser, addNewMessage
+  getListNowUsers, addNewUser, removeUser, addNewMessage,
+  offPrev
 } from './functions.js'
 
 import { io } from 'https://cdn.socket.io/4.4.1/socket.io.esm.min.js'
@@ -30,10 +31,6 @@ export let srcImg = ''
 /***********************
  *  BASE FUNCTIONS 
  ***********************/
-
-const offPrev = function() {
-  event.preventDefault()
-}
 
 const imgConvertToBase64 = function() {
   event.preventDefault()

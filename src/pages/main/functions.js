@@ -120,3 +120,7 @@ export const addNewMessage = function(messageObj) {
     }
   }
 }
+
+export const offPrev = function() {
+  event.preventDefault()
+}
