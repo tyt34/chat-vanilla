@@ -560,7 +560,7 @@ li {
 
 @media screen and (max-width: 600px) {
   .main__list-messages {
-    height: calc(100vh - 400px);
+    height: calc(100vh - 450px);
   }
 }
 .main__message {
