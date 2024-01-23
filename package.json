@@ -2,7 +2,7 @@
   "name": "js",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://tyt34.github.io/chat-vanilla-js/",
+  "homepage": "https://tyt34.github.io/chat-vanilla/",
   "main": "index.js",
   "scripts": {
     "build": "echo 'URLAPI = prod' > .env; rm -rf dist && webpack --mode production",

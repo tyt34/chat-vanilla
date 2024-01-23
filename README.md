@@ -23,9 +23,9 @@
     <hr>
 </tr>
 
-[Ссылка на страницу - Введение.](https://tyt34.github.io/chat-vanilla-js)
+[Ссылка на страницу - Введение.](https://tyt34.github.io/chat-vanilla)
 
-[Ссылка на страницу - Чат.](https://tyt34.github.io/chat-vanilla-js/main.html)
+[Ссылка на страницу - Чат.](https://tyt34.github.io/chat-vanilla/main.html)
 
 1. npm i
 2. npm run dev
